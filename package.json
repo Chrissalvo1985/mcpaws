@@ -9,7 +9,9 @@
     "dev": "tsc --watch",
     "start:mcp": "node dist/mcp-server.js",
     "start:api": "node dist/http-server.js",
-    "vercel-build": "tsc"
+    "vercel-build": "tsc",
+    "check:aws": "node scripts/check-aws.js",
+    "deploy": "vercel --prod"
   },
   "keywords": ["mcp", "aws", "rds", "n8n", "chatgpt"],
   "author": "",
