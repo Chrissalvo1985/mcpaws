@@ -112,10 +112,10 @@ class MCPServer {
 
         switch (name) {
           case "execute_sql":
-            result = await dbCore.executeSql(args.sql, args.parameters);
+            result = await dbCore.executeSql((args as any)?.sql, (args as any)?.parameters);
             break;
           case "batch_execute_sql":
-            result = await dbCore.batchExecuteSql(args.sql, args.parameterSets);
+            result = await dbCore.batchExecuteSql((args as any)?.sql, (args as any)?.parameterSets);
             break;
           case "list_db_instances":
             result = await dbCore.listDbInstances();
@@ -124,7 +124,7 @@ class MCPServer {
             result = await dbCore.listDbClusters();
             break;
           case "describe_db_instance":
-            result = await dbCore.describeDbInstance(args.instanceIdentifier);
+            result = await dbCore.describeDbInstance((args as any)?.instanceIdentifier);
             break;
           default:
             throw new Error(`Unknown tool: ${name}`);
