@@ -1,0 +1,31 @@
+{
+  "name": "mcp-aws-database-hybrid",
+  "version": "1.0.0",
+  "description": "AWS Database server - MCP + HTTP API for n8n/ChatGPT integration",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start:mcp": "node dist/mcp-server.js",
+    "start:api": "node dist/http-server.js",
+    "vercel-build": "tsc"
+  },
+  "keywords": ["mcp", "aws", "rds", "n8n", "chatgpt"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-rds": "^3.737.0",
+    "@aws-sdk/client-rds-data": "^3.737.0",
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/express": "^5.0.0",
+    "@types/cors": "^2.8.17",
+    "typescript": "^5.7.2"
+  }
+}
